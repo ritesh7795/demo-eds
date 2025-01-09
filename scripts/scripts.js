@@ -58,6 +58,7 @@ function buildAutoBlocks(main) {
  * @param {Element} main The main element
  */
 // eslint-disable-next-line import/prefer-default-export
+
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
@@ -96,6 +97,7 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  autolinkModals(doc)
   const main = doc.querySelector('main');
   await loadSections(main);
 
@@ -109,6 +111,18 @@ async function loadLazy(doc) {
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
 }
+function autolinkModals(element) {
+  element.addEventListener('click', async (e) => {
+    const origin = e.target.closest('a');
+
+    if (origin && origin.href && origin.href.includes('/modals/')) {
+      e.preventDefault();
+      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      openModal(origin.href);
+    }
+  });
+}
+
 
 /**
  * Loads everything that happens a lot later,
