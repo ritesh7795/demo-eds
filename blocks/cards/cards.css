@@ -25,3 +25,13 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+.useravatar ul li {
+  text-align: center;
+}
+ 
+.useravatar ul li .cards-card-image img {
+  width: 164px;
+  height: 164px;
+  border-radius: 100%;
+}
+ 
