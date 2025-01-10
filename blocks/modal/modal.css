@@ -10,7 +10,7 @@ body.modal-open {
     overscroll-behavior: none;
     overflow-y: hidden;
     position: relative;
-    width: calc(40vw - 48px);
+    width: calc(100vw - 48px);
     max-width: 700px;
     max-height: calc(60dvh - (2 * var(--header-height)));
     padding: 0;

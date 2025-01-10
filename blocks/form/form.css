@@ -110,14 +110,11 @@
     background-color: black;
     height: 60px
   }
-
   .form .button {
     max-width: max-content;
-    border-radius: 0%;
-    background-color: #ffea00;
-    color: black;
-    height: 50px;
   }
+
+
 }
 
 .form .link {
@@ -127,6 +124,13 @@
   margin: 0;
 }
 
+.form .button {
+  max-width: max-content;
+  border-radius: 0%;
+  background-color: #ffea00;
+  color: black;
+  height: 50px;
+}
 
 @media (width >=900px) {
 
